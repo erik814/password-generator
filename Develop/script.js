@@ -6,14 +6,13 @@ var useLowerCase;
 var useNumbers;
 var useSpecialCharacters;
 //i added this one vvv
-var selectedCharacters
+var selectedCharacters = []
 var finalPassword = "";
 
 var upperCase = ["A","B","C","D","E","F","G","H","I","J","K","L","M","N","O","P","Q","R","S","T","U","V","W","X","Y","Z",];
 var lowerCase = ["a","b","c","d","e","f","g","h","i","j","k","l","m","n","o","p","q","r","s","t","u","v","w","x","y","z",];
 var nums = ["1","2","3","4","5","6","7","8","9","0",];
 var specialCharacters = ["!","@","#","$","%","^","&","*","(","(","_","-","+","=","{","}","[","]","|",";",":","<",",",">",".","?","/",];
-
 
 
 
@@ -27,7 +26,7 @@ function generatePassword(){
   useNumbers = confirm("Do you want to use numbers?");
   useSpecialCharacters = confirm("Do you want to use special characters?");
 
-// if then statement to merge accepted arrays
+
 
   if(useUpperCase){
     selectedCharacters.push(...upperCase)
@@ -45,17 +44,23 @@ function generatePassword(){
     selectedCharacters.push(...specialCharacters)
   }
 
-  //not sure about this stuff ^^^^^ cross your fingers
+
+
+
+  // for(var x = 0; x < numberOfCharacters.length; x++){
+  //   var randomPassword = selectedCharacters[(Math.floor(Math.random() * (selectedCharacters.length)))];
+  //     console.log(randomPassword);
+  // }
 
   for(var x = 0; x < numberOfCharacters; x++){
-    console.log(selectedCharacters[x]);
+    var randomPassword = selectedCharacters[(Math.floor(Math.random() * (selectedCharacters.length)))];
+    console.log(randomPassword);
   }
 
 }
 
 
 
-// use a loop to grab a random character x number of times
 
 //  finalPassword +=  <--- will add another character
 
