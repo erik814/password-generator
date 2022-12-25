@@ -1,13 +1,17 @@
-// Assignment Code
+
 var generateBtn = document.querySelector("#generate");
 var numberOfCharacters;
 var useUpperCase;
 var useLowerCase;
 var useNumbers;
 var useSpecialCharacters;
-//i added this one vvv
 var selectedCharacters = []
-var finalPassword = "";
+var randomCharacters = ""
+var randomPassword = [];
+
+//randompassword was ""    randomcharacters was []
+
+
 
 var upperCase = ["A","B","C","D","E","F","G","H","I","J","K","L","M","N","O","P","Q","R","S","T","U","V","W","X","Y","Z",];
 var lowerCase = ["a","b","c","d","e","f","g","h","i","j","k","l","m","n","o","p","q","r","s","t","u","v","w","x","y","z",];
@@ -18,8 +22,9 @@ var specialCharacters = ["!","@","#","$","%","^","&","*","(","(","_","-","+","="
 
 
 function generatePassword(){
-  numberOfCharacters = parseInt(prompt("How many characters would you like to use from 8-128?"));
-  // can use numberOfCharacters as a variable now
+  numberOfCharacters = parseInt(prompt("How many characters would you like to use? Please select a number from 8-128"));
+  
+
 
   useUpperCase = confirm("Do you want to use uppercase letters?");
   useLowerCase = confirm("Do you want to use lowercase letters?");
@@ -46,16 +51,17 @@ function generatePassword(){
 
 
 
-
-  // for(var x = 0; x < numberOfCharacters.length; x++){
-  //   var randomPassword = selectedCharacters[(Math.floor(Math.random() * (selectedCharacters.length)))];
-  //     console.log(randomPassword);
-  // }
-
   for(var x = 0; x < numberOfCharacters; x++){
-    var randomPassword = selectedCharacters[(Math.floor(Math.random() * (selectedCharacters.length)))];
-    console.log(randomPassword);
+    randomCharacters = selectedCharacters[(Math.floor(Math.random() * (selectedCharacters.length)))];
+    randomPassword.push(...randomCharacters);
   }
+
+  var finalPassword = randomPassword.join("");
+  return(finalPassword);
+  
+
+
+// I think i need to turn randomPassword from seperate characters into a string
 
 }
 
@@ -67,6 +73,7 @@ function generatePassword(){
 
 // Don't touch any code below this
 // Write password to the #password input
+
 function writePassword() {
   var password = generatePassword();
   var passwordText = document.querySelector("#password");
@@ -74,6 +81,8 @@ function writePassword() {
   passwordText.value = password;
 
 }
+
+
 
 // Add event listener to generate button
 generateBtn.addEventListener("click", writePassword);
