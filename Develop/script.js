@@ -8,8 +8,7 @@ var useSpecialCharacters;
 var selectedCharacters = []
 var randomCharacters = ""
 var randomPassword = [];
-
-//randompassword was ""    randomcharacters was []
+var finalPassword = "";
 
 
 
@@ -20,59 +19,51 @@ var specialCharacters = ["!","@","#","$","%","^","&","*","(","(","_","-","+","="
 
 
 
-
 function generatePassword(){
   numberOfCharacters = parseInt(prompt("How many characters would you like to use? Please select a number from 8-128"));
-  
+  if (numberOfCharacters < "8" || numberOfCharacters > "128"){
+    alert("Please choose a number of characters from 8-128");
+    generatePassword();
+  }else{
 
-
-  useUpperCase = confirm("Do you want to use uppercase letters?");
-  useLowerCase = confirm("Do you want to use lowercase letters?");
-  useNumbers = confirm("Do you want to use numbers?");
-  useSpecialCharacters = confirm("Do you want to use special characters?");
-
-
-
-  if(useUpperCase){
-    selectedCharacters.push(...upperCase)
-  }
-
-  if(useLowerCase){
-    selectedCharacters.push(...lowerCase)
-  }
-
-  if(useNumbers){
-    selectedCharacters.push(...nums)
-  }
-
-  if(useSpecialCharacters){
-    selectedCharacters.push(...specialCharacters)
-  }
+    useUpperCase = confirm("Do you want to use uppercase letters?");
+    useLowerCase = confirm("Do you want to use lowercase letters?");
+    useNumbers = confirm("Do you want to use numbers?");
+    useSpecialCharacters = confirm("Do you want to use special characters?");
 
 
 
-  for(var x = 0; x < numberOfCharacters; x++){
-    randomCharacters = selectedCharacters[(Math.floor(Math.random() * (selectedCharacters.length)))];
-    randomPassword.push(...randomCharacters);
-  }
+    if(useUpperCase){
+      selectedCharacters.push(...upperCase)
+    }
 
-  var finalPassword = randomPassword.join("");
+    if(useLowerCase){
+      selectedCharacters.push(...lowerCase)
+    }
+
+    if(useNumbers){
+      selectedCharacters.push(...nums)
+    }
+
+    if(useSpecialCharacters){
+      selectedCharacters.push(...specialCharacters)
+    }
+
+
+
+    for(var x = 0; x < numberOfCharacters; x++){
+      randomCharacters = selectedCharacters[(Math.floor(Math.random() * (selectedCharacters.length)))];
+      randomPassword.push(...randomCharacters);
+    }
+
+    finalPassword = randomPassword.join("");
+    
+  }  
+
   return(finalPassword);
-  
-
-
-// I think i need to turn randomPassword from seperate characters into a string
-
 }
 
 
-
-
-//  finalPassword +=  <--- will add another character
-
-
-// Don't touch any code below this
-// Write password to the #password input
 
 function writePassword() {
   var password = generatePassword();
@@ -84,5 +75,4 @@ function writePassword() {
 
 
 
-// Add event listener to generate button
 generateBtn.addEventListener("click", writePassword);
