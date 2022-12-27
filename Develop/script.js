@@ -27,27 +27,32 @@ function generatePassword(){
   }else{
 
     useUpperCase = confirm("Do you want to use uppercase letters?");
-    useLowerCase = confirm("Do you want to use lowercase letters?");
-    useNumbers = confirm("Do you want to use numbers?");
-    useSpecialCharacters = confirm("Do you want to use special characters?");
-
-
 
     if(useUpperCase){
       selectedCharacters.push(...upperCase)
     }
 
+
+    useLowerCase = confirm("Do you want to use lowercase letters?");
+
     if(useLowerCase){
       selectedCharacters.push(...lowerCase)
     }
+
+
+    useNumbers = confirm("Do you want to use numbers?");
 
     if(useNumbers){
       selectedCharacters.push(...nums)
     }
 
+
+    useSpecialCharacters = confirm("Do you want to use special characters?");
+
     if(useSpecialCharacters){
       selectedCharacters.push(...specialCharacters)
     }
+
 
 
 
