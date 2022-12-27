@@ -17,10 +17,10 @@ Here is a screenshot of the webpage with a password filled in:
 
 ## Tasks
 
-For this project, I was already given the HTML and CSS for the entire page, as well as a little bit of JavaScript. My task was to write the JavaScript to get the website functioning as intended. In doing so I ended up creating A LOT of variables.
+For this project, I was already given the HTML and CSS for the entire page, as well as a little bit of JavaScript. My task was to write the JavaScript to get the website functioning as intended. In doing so, I ended up creating A LOT of variables.
 
 ## What I Learned
 
-There were several key takeaways from this project. One big issue I had/thing I learned is that you need to be careful about what you have inside a loop. If I'm assigning value to a variable inside of a loop, then that variable will be rewritten each time the loop runs. Instead of ending up with a long run of characters, I will only end up with the very last random character.
+There were several key takeaways from this project. One big issue I had/thing I learned is that you need to be careful about what you have inside a loop. If I'm assigning a value to a variable inside of a loop, then that variable will be rewritten each time the loop runs. Instead of ending up with a long run of characters, I will only end up with the very last random character.
 
-I also learned that if you're trying to push something into an array, and you don't have ... before the name of the variable you're trying to push, you actually won't be pushin anything.
+I also learned that if you're trying to push something into an array, and you don't have "..." before the name of the variable you're trying to push, you actually won't be pushing anything.
